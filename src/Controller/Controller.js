@@ -21,13 +21,19 @@ class Controller {
 
   moving() {
     InputView.readMoving(Errors.moving, (input) => {
-      const [down, up] = this.#bridgeGame.move(input);
-      this.showMove(down, up);
+      const [down, up, result] = this.#bridgeGame.move(input);
+      this.showMove(down, up, result);
     });
   }
 
-  showMove(down, up) {
+  showMove(down, up, result) {
     OutputView.printMap(down, up);
+
+    if (result) {
+      this.moving();
+    } else {
+      console.log("wrong");
+    }
   }
 }
 
