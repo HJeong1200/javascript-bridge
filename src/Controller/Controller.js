@@ -29,7 +29,9 @@ class Controller {
   showMove(down, up, result) {
     OutputView.printMap(down, up);
 
-    if (result) {
+    if (result === "END") {
+      this.printResult(true);
+    } else if (result) {
       this.moving();
     } else {
       this.gameCommand();
@@ -42,9 +44,18 @@ class Controller {
         this.#bridgeGame.retry();
         this.moving();
       } else {
-        console.log("close");
+        this.printResult(false);
       }
     });
+  }
+
+  printResult(bool) {
+    const result = this.#bridgeGame.getResults();
+    if (bool) {
+      OutputView.printResult(true, result);
+    } else {
+      OutputView.printResult(false, result);
+    }
   }
 }
 

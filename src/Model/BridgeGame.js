@@ -36,6 +36,9 @@ class BridgeGame {
     this.currentBridgeDown(input);
     this.#currentStep++;
 
+    if (this.#currentStep === this.#bridge.length) {
+      return [this.#currentBridgeDown, this.#currentBridgeUp, "END"];
+    }
     return [this.#currentBridgeDown, this.#currentBridgeUp, result];
   }
 
@@ -61,6 +64,10 @@ class BridgeGame {
     } else {
       this.#currentBridgeDown.push(EMPTY);
     }
+  }
+
+  getResults() {
+    return [this.#tryCount, this.#currentBridgeUp, this.#currentBridgeDown];
   }
 
   /**
