@@ -13,6 +13,7 @@ const OutputView = {
   printMap(down, up) {
     Console.print(`${START}${up.join(DIVIDER)}${END}`);
     Console.print(`${START}${down.join(DIVIDER)}${END}`);
+    Console.print("");
   },
 
   /**
