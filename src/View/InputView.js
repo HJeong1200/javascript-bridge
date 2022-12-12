@@ -16,7 +16,7 @@ const InputView = {
   readBridgeSize(errCallback, callback) {
     Console.readLine(InputMessage.BRIDGESIZE, (input) => {
       input = Number(input);
-      errCallback(input);
+      if (!errCallback(input)) return;
       callback(input);
     });
   },
@@ -26,7 +26,7 @@ const InputView = {
    */
   readMoving(errCallback, callback) {
     Console.readLine(InputMessage.MOVING, (input) => {
-      errCallback(input);
+      if (!errCallback(input)) return;
       callback(input);
     });
   },
@@ -36,7 +36,7 @@ const InputView = {
    */
   readGameCommand(errCallback, callback) {
     Console.readLine(InputMessage.GAMECOMMAND, (input) => {
-      errCallback(input);
+      if (!errCallback(input)) return;
       callback(input);
     });
   },
