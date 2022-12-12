@@ -13,7 +13,13 @@ const InputView = {
     Console.print(InputMessage.START);
   },
 
-  readBridgeSize() {},
+  readBridgeSize(errCallback, callback) {
+    Console.readLine(InputMessage.BRIDGESIZE, (input) => {
+      input = Number(input);
+      errCallback(input);
+      callback(input);
+    });
+  },
 
   /**
    * 사용자가 이동할 칸을 입력받는다.
