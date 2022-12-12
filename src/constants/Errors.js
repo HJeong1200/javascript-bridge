@@ -8,6 +8,11 @@ const Errors = {
     if (str === "U" || str === "D") return;
     throw new Error();
   },
+
+  gameCommand(str) {
+    if (str === "R" || str === "Q") return;
+    throw new Error();
+  },
 };
 
 module.exports = Errors;

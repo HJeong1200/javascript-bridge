@@ -32,8 +32,19 @@ class Controller {
     if (result) {
       this.moving();
     } else {
-      console.log("wrong");
+      this.gameCommand();
     }
+  }
+
+  gameCommand() {
+    InputView.readGameCommand(Errors.gameCommand, (input) => {
+      if (input === "R") {
+        this.#bridgeGame.retry();
+        this.moving();
+      } else {
+        console.log("close");
+      }
+    });
   }
 }
 
