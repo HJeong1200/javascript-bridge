@@ -22,4 +22,12 @@ const BridgeBlocks = {
   EMPTY: " ",
 };
 
-module.exports = { InputMessage, BridgeBlocks, OutputMessage };
+const ERROR = "[ERROR] ";
+
+const ErrorMessage = {
+  SIZE: ERROR + "다리 길이는 3부터 20 사이의 숫자여야 합니다.",
+  MOVING: ERROR + "U 혹은 D만 입력 가능합니다.",
+  GAMECOMMAND: ERROR + "R 혹은 Q만 입력 가능합니다.",
+};
+
+module.exports = { InputMessage, OutputMessage, BridgeBlocks, ErrorMessage };
