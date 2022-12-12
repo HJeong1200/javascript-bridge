@@ -18,7 +18,6 @@ class BridgeGame {
       num,
       BridgeRandomNumberGenerator.generate
     );
-    console.log(this.#bridge); // 이거 지우기!!!!!!!
     this.#tryCount = 1;
     this.#currentStep = 0;
     this.#currentBridgeUp = [];
