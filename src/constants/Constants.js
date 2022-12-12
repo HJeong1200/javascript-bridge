@@ -4,4 +4,13 @@ const InputMessage = {
   MOVING: "이동할 칸을 선택해주세요. (위: U, 아래: D)\n",
 };
 
-module.exports = InputMessage;
+const BridgeBlocks = {
+  START: "[ ",
+  DIVIDER: " | ",
+  END: " ]",
+  CORRECT: "O",
+  WRONG: "X",
+  EMPTY: " ",
+};
+
+module.exports = { InputMessage, BridgeBlocks };

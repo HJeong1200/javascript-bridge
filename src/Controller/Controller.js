@@ -1,6 +1,7 @@
 const Errors = require("../constants/Errors");
 const BridgeGame = require("../Model/BridgeGame");
 const InputView = require("../View/InputView");
+const OutputView = require("../View/OutputView");
 
 class Controller {
   #bridgeGame;
@@ -20,8 +21,13 @@ class Controller {
 
   moving() {
     InputView.readMoving(Errors.moving, (input) => {
-      console.log(input);
+      const [down, up] = this.#bridgeGame.move(input);
+      this.showMove(down, up);
     });
+  }
+
+  showMove(down, up) {
+    OutputView.printMap(down, up);
   }
 }
 
