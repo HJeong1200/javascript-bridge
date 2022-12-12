@@ -3,6 +3,11 @@ const Errors = {
     if (num !== parseInt(num) || isNaN(num) || num < 3 || num > 20)
       throw new Error();
   },
+
+  moving(str) {
+    if (str === "U" || str === "D") return;
+    throw new Error();
+  },
 };
 
 module.exports = Errors;

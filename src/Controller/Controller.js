@@ -14,6 +14,13 @@ class Controller {
     InputView.readBridgeSize(Errors.bridgeSize, (input) => {
       const newGame = new BridgeGame(input);
       this.#bridgeGame = newGame;
+      this.moving();
+    });
+  }
+
+  moving() {
+    InputView.readMoving(Errors.moving, (input) => {
+      console.log(input);
     });
   }
 }
